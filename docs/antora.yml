@@ -1,0 +1,5 @@
+name: quarkus-clerk-auth
+title: Quarkus Clerk Auth
+version: dev
+nav:
+  - modules/ROOT/nav.adoc
