@@ -5,8 +5,8 @@ import java.security.Principal;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
-import io.quarkiverse.clerk.auth.runtime.sdk.Client;
-import io.quarkiverse.clerk.auth.runtime.sdk.session.SessionClaims;
+import io.github.zzhorizonzz.sdk.ClerkClient;
+import io.github.zzhorizonzz.sdk.session.SessionClaims;
 import io.quarkus.security.UnauthorizedException;
 import io.quarkus.security.identity.AuthenticationRequestContext;
 import io.quarkus.security.identity.IdentityProvider;
@@ -18,7 +18,7 @@ import io.smallrye.mutiny.Uni;
 public class DefaultClerkIdentityProvider implements IdentityProvider<ClerkAuthenticationRequest> {
 
     @Inject
-    Client client;
+    ClerkClient client;
 
     @Override
     public Class<ClerkAuthenticationRequest> getRequestType() {

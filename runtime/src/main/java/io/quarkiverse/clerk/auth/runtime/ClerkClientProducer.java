@@ -6,7 +6,7 @@ import jakarta.enterprise.inject.Produces;
 import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 
-import io.quarkiverse.clerk.auth.runtime.sdk.Client;
+import io.github.zzhorizonzz.sdk.ClerkClient;
 
 @ApplicationScoped
 public class ClerkClientProducer {
@@ -17,11 +17,11 @@ public class ClerkClientProducer {
     @Produces
     @Singleton
     @Default
-    public Client getClerkClient() {
+    public ClerkClient getClerkClient() {
         if (configuration.token.isEmpty()) {
             throw new RuntimeException("Clerk token is not configured");
         }
 
-        return new Client(configuration.token.get());
+        return new ClerkClient(configuration.token.get());
     }
 }

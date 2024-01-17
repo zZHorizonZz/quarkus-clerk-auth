@@ -6,7 +6,7 @@ import java.util.Set;
 import org.eclipse.microprofile.jwt.JsonWebToken;
 import org.jose4j.jwt.MalformedClaimException;
 
-import io.quarkiverse.clerk.auth.runtime.sdk.session.SessionClaims;
+import io.github.zzhorizonzz.sdk.session.SessionClaims;
 
 public class ClerkPrincipal implements JsonWebToken {
 

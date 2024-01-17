@@ -22,7 +22,7 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.core.Response;
 
-import io.quarkiverse.clerk.auth.runtime.sdk.Client;
+import io.github.zzhorizonzz.sdk.ClerkClient;
 import io.quarkus.security.Authenticated;
 import io.quarkus.security.runtime.SecurityIdentityAssociation;
 
@@ -35,7 +35,7 @@ public class ClerkAuthResource {
     SecurityIdentityAssociation securityIdentityAssociation;
 
     @Inject
-    Client client;
+    ClerkClient client;
 
     @GET
     @Authenticated
