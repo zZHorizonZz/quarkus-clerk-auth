@@ -36,6 +36,11 @@
             <artifactId>quarkus-smallrye-jwt-build</artifactId>
         </dependency>
         <dependency>
+            <groupId>io.kiota</groupId>
+            <artifactId>kiota-http-vertx</artifactId>
+            <version>${kiota.plugin.version}</version>
+        </dependency>
+        <dependency>
             <groupId>io.github.zzhorizonzz</groupId>
             <artifactId>clerk-java-sdk</artifactId>
             <version>0.0.1</version>
