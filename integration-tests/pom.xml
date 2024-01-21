@@ -3,9 +3,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>io.quarkiverse.clerk-auth</groupId>
+    <groupId>io.github.zzhorizonzz</groupId>
     <artifactId>quarkus-clerk-auth-parent</artifactId>
-    <version>999-SNAPSHOT</version>
+    <version>0.0.2</version>
   </parent>
   <artifactId>quarkus-clerk-auth-integration-tests</artifactId>
   <name>Quarkus Clerk Auth - Integration Tests</name>
@@ -14,7 +14,7 @@
   </properties>
   <dependencies>
     <dependency>
-      <groupId>io.quarkiverse.clerk-auth</groupId>
+      <groupId>io.github.zzhorizonzz</groupId>
       <artifactId>quarkus-clerk-auth</artifactId>
       <version>${project.version}</version>
     </dependency>

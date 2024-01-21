@@ -3,9 +3,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>io.quarkiverse.clerk-auth</groupId>
+    <groupId>io.github.zzhorizonzz</groupId>
     <artifactId>quarkus-clerk-auth-parent</artifactId>
-    <version>999-SNAPSHOT</version>
+    <version>0.0.2</version>
   </parent>
   <artifactId>quarkus-clerk-auth-deployment</artifactId>
   <name>Quarkus Clerk Auth - Deployment</name>
@@ -35,7 +35,7 @@
       <artifactId>quarkus-smallrye-jwt-build-deployment</artifactId>
     </dependency>
     <dependency>
-      <groupId>io.quarkiverse.clerk-auth</groupId>
+      <groupId>io.github.zzhorizonzz</groupId>
       <artifactId>quarkus-clerk-auth</artifactId>
       <version>${project.version}</version>
     </dependency>
