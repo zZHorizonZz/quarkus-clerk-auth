@@ -5,8 +5,11 @@ import java.security.Principal;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
+import org.jboss.logging.Logger;
+
 import io.github.zzhorizonzz.sdk.ClerkClient;
 import io.github.zzhorizonzz.sdk.session.SessionClaims;
+import io.quarkus.runtime.configuration.ProfileManager;
 import io.quarkus.security.UnauthorizedException;
 import io.quarkus.security.identity.AuthenticationRequestContext;
 import io.quarkus.security.identity.IdentityProvider;
@@ -19,6 +22,9 @@ public class DefaultClerkIdentityProvider implements IdentityProvider<ClerkAuthe
 
     @Inject
     ClerkClient client;
+
+    @Inject
+    Logger log;
 
     @Override
     public Class<ClerkAuthenticationRequest> getRequestType() {
@@ -33,11 +39,19 @@ public class DefaultClerkIdentityProvider implements IdentityProvider<ClerkAuthe
                     try {
                         SessionClaims claims = client.verifyToken(request.getToken());
                         if (claims == null) {
+                            if (ProfileManager.getLaunchMode().isDevOrTest()) {
+                                log.warnv("Invalid token: {0}", request.getToken());
+                            }
+
                             return Uni.createFrom().failure(new UnauthorizedException("Invalid token"));
                         }
 
                         return Uni.createFrom().item(authenticate(claims));
                     } catch (Exception e) {
+                        if (ProfileManager.getLaunchMode().isDevOrTest()) {
+                            log.warnv("There was an error verifying the token: {0}", e.getMessage());
+                        }
+
                         return Uni.createFrom().failure(new UnauthorizedException(e));
                     }
                 });
